@@ -1,5 +1,36 @@
 /* Estilo geral */
 
+/* Resposividade*/
+/* Estilos para dispositivos grandes (desktops) */
+body {
+    font-size: 16px;
+  }
+  
+  /* Para tablets (tela média) */
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+  }
+  
+  /* Para celulares (tela pequena) */
+  @media (max-width: 480px) {
+    body {
+      font-size: 12px;
+    }
+  }
+   
+  .item {
+    flex: 1 1 200px; /* Cresce ou diminui conforme o espaço disponível */
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  
+
+
 /* Estilo para o título em destaque */
 .titulo-destaque {
     font-family: 'Quintessential', cursive; /* Fonte destacada */
@@ -19,6 +50,7 @@
     text-align: center; /* Centraliza o título */
 }
 
+
 /* Estilo para a informação comum */
 .informacao-comum {
     font-family: 'Arial', sans-serif; /* Fonte comum */
@@ -34,6 +66,9 @@
     margin: 0 auto;
     padding: 0 15px;
 }
+
+
+
 
 body {
     font-family: 'Arial', sans-serif;
@@ -53,7 +88,7 @@ header {
 header .container {
     display: flex;
     justify-content: space-between;
-    align-items: inherit;
+    align-items:inherit;
     max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
@@ -81,7 +116,7 @@ header .site-title p {
     color: #8e6f3f;
     margin: 0;
 }
-
+----------------------------
 /* Estilos para o menu */
 nav ul {
     list-style-type: none;
@@ -137,6 +172,7 @@ nav ul li:hover > a {
 nav .dropdown-content a:hover {
     background-color: #D9C4A1;
 }
+---------------------------------------
 
 header nav ul {
     list-style: none;
@@ -267,6 +303,7 @@ header nav ul li a:hover {
     color: white;
 }
 
+
 /*CAIXA VIGÁRIO E DIACONO */
 .team-section {
     display: flex;
@@ -302,6 +339,7 @@ header nav ul li a:hover {
     font-size: 1em;
     color: #412c05;
 }
+
 
 /* Seção de acontecimentos da semana */
 .weekly-events {
@@ -346,182 +384,176 @@ header nav ul li a:hover {
     text-decoration: none;
 }
 
-/* Media Queries para responsividade */
 
-/* Para telas menores que 768px (tablets e smartphones em modo paisagem) */
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        padding: 0;
-    }
-
-    header nav ul li {
-        margin: 10px 0;
-    }
-
-    .about-parish img {
-        width: 90%;
-        margin: 20px auto;
-    }
-
-    .team-section {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .team-box {
-        width: 80%;
-        margin: 10px 0;
-    }
-
-    .weekly-events .events-list {
-        flex-direction: column;
-    }
-
-    .event-item {
-        width: 100%;
-        margin-bottom: 15px;
-    }
-
-    .card {
-        width: 100%;
-    }
-
-    footer .social-icons a {
-        font-size: 20px;
-        margin: 0 10px;
-    }
-}
-
-/* Para telas menores que 480px (smartphones) */
-@media (max-width: 480px) {
-    .titulo-destaque {
-        font-size: 20px;
-    }
-
-    .about-parish .container img {
-        width: 100%;
-    }
-
-    .about-parish .btn {
-        padding: 8px 15px;
-    }
-
-    .team-box {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .weekly-events h2 {
-        font-size: 24px;
-    }
-
-
-    /* Estilos para o menu */
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+/* Card de informação */
+.card-container {
+    perspective: 1000px; /* Define a profundidade da visualização para o efeito de 3D */
     display: flex;
+    justify-content: center; /* Centraliza o card horizontalmente */
+    align-items: center; /* Centraliza o card verticalmente */
+    height: 100%; /* Para ocupar toda a altura da tela */
 }
 
-nav ul li {
-    display: inline-block;
+.card {
+    width: 1000px; /* Ajuste o tamanho do card conforme necessário */
+    height: 200px; /* Ajuste o tamanho do card conforme necessário */
     position: relative;
-}
-
-nav a {
-    text-decoration: none;
-    padding: 10px 15px;
-    display: block;
-    background-color: #D9C4A1;
-    color: #412c05;
-    font-weight: bold;
-}
-
-/* Esconde o menu em telas pequenas */
-nav ul {
-    display: none;
-}
-
-/* Estilo do botão de menu hamburger */
-.menu-toggle {
-    background: none;
-    border: none;
-    font-size: 30px;
-    color: #5c3c00;
-    display: block;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.hamburger-icon {
-    font-size: 30px;
-    color: #5c3c00;
-}
-
-/* Quando o menu estiver visível */
-nav ul.menu.active {
+    transform-style: preserve-3d;
+    transition: transform 0.5s; /* A transição do efeito de virar */
     display: flex;
-    flex-direction: column; /* Torna o menu vertical */
-    background-color: #D9C4A1;
-    width: 100%;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
 }
 
-nav ul.menu li {
-    display: block;
+.card:hover {
+    transform: rotateY(180deg); /* A rotação do card no eixo Y ao passar o mouse */
+}
+
+.card .front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Impede que o verso do card seja visível quando virado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    border-radius: 8px;
+}
+
+
+.card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Impede que o verso do card seja visível quando virado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: black;
+    border-radius: 8px;
+}
+.card .front {
+    background-color: #8e6f3f;
+}
+
+.card .back {
+    background-color: #D9C4A1;
+    transform: rotateY(180deg); /* Coloca o verso do card virado para o outro lado */
+}
+
+
+/* Estilo para a parte de trás do card */
+.card .back {
+    background-color: #D9C4A1;
+    transform: rotateY(180deg); /* Coloca o verso do card virado para o outro lado */
+    display: flex;
+    flex-direction: column;  /* Alinha o conteúdo verticalmente */
+    justify-content: center; /* Centraliza o conteúdo na vertical */
+    align-items: center; /* Centraliza o conteúdo na horizontal */
+    text-align: center;
+    padding: 20px;
+}
+
+.card .back img {
+    width: 60px; /* Ajuste o tamanho do ícone */
+    height: 60px;
+    margin-bottom: 15px; /* Espaço entre o ícone e o texto */
+}
+
+.card .back h1 {
+    font-family: 'Quintessential', cursive; /* Fonte escolhida */
+    font-size: 24px;
+    color: white;
+    margin: 0;
+}
+
+
+.card .front {
+    background-color: #412c05;
+    display: flex;
+    flex-direction: column;  /* Alinha o conteúdo verticalmente */
+    justify-content: center; /* Centraliza o conteúdo na vertical */
+    align-items: center; /* Centraliza o conteúdo na horizontal */
+    text-align: center;
+    padding: 20px;
+}
+
+.card .front img {
+    width: 60px; /* Ajuste o tamanho do ícone */
+    height: 60px;
+    margin-bottom: 15px; /* Espaço entre o ícone e o texto */
+}
+
+.card .front h1 {
+    font-family: 'Quintessential', cursive; /* Fonte escolhida */
+    font-size: 24px;
+    color: #D9C4A1;
+    margin: 0;
+}
+
+
+.card img {
+    width: 60px; /* Ajuste o tamanho do ícone */
+    height: 60px;
+    margin-bottom: 15px; /* Espaço entre o ícone e o texto */
+}
+
+.card .info {
+    font-size: 18px;
+}
+
+
+/* estilo programação */
+.schedule-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #D9C4A1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-day {
+    margin-bottom: 20px;
+}
+
+.schedule-day h2 {
+    font-family: 'Quintessential', cursive;
+    font-size: 28px;
+    color: #412c05;
+    border-bottom: 2px solid #412c05;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+
+
+/* Estilos do Rodapé e Ícones de Redes Sociais */
+footer {
+    background-color:#D9C4A1;
+    color: #412c05;
+    padding: 20px 0;
     text-align: center;
 }
 
-nav ul.menu li a {
-    padding: 15px;
-    background-color: #D9C4A1;
-    color: #412c05;
+footer .social-icons {
+    margin-top: 10px;
 }
 
-/* Media Query para dispositivos móveis */
-@media (max-width: 768px) {
-    nav ul.menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        background-color: #D9C4A1;
-        z-index: 1000;
-    }
-
-    .menu-toggle {
-        display: block; /* Mostra o botão de menu */
-    }
-
-    nav ul.menu.active {
-        display: flex; /* Exibe o menu quando clicado */
-    }
-
-    nav ul.menu li {
-        width: 100%;
-    }
-
-    nav ul.menu li a {
-        padding: 15px;
-        text-align: center;
-    }
+footer .social-icons a {
+    color:#412c05;
+    font-size: 24px;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-    .card {
-        width: 100%;
-        height: auto;
-    }
+footer .social-icons a:hover {
+    color: #6a4e23; /* Marrom escuro */
 }
+
