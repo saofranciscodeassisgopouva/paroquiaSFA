@@ -251,12 +251,19 @@ footer .social-icons a:hover {
   
   /* Container individual */
   .pastoral {
-    width: 250px;
-    height: 250px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
+    width: 23%; /* Largura dos cartões em telas grandes */
+    min-width: 150px; /* Define uma largura mínima para telas menores */
+    max-width: 250px; /* Define um limite de largura */
+    aspect-ratio: 3/3; /* Proporção do cartão (ajustável) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
   }
+  
   
   .pastoral-inner {
     width: 100%;
@@ -282,6 +289,7 @@ footer .social-icons a:hover {
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+    word-wrap: break-word; /* Quebra palavras longas automaticamente */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
@@ -291,8 +299,8 @@ footer .social-icons a:hover {
   }
   
   .pastoral-front img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 80%;
+    max-height: 80%;
     border-radius: 8px;
   }
   
@@ -302,17 +310,246 @@ footer .social-icons a:hover {
     color: #fff;
     transform: rotateX(180deg);
     text-align: center;
-    font-size: 16px;
+    font-size: 15px;
     padding: 10px;
     border-radius: 8px;
+    word-wrap: break-word; /* Quebra palavras longas automaticamente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .pastoral-back p {
-    margin-bottom: 10px; /* Espaçamento entre a palavra e a imagem */
-  }
+    word-wrap: break-word; /* Quebra palavras longas automaticamente */
+    overflow-wrap: break-word; /* Garante a quebra de palavras para navegadores modernos */
+    margin: 0; /* Remove margens indesejadas */
+}
   
   .pastoral-back img {
     max-width: 80%; /* Ajusta o tamanho da imagem no verso */
     border-radius: 8px;
   }
+  
+  /* CABEÇALHO RESPONSIVO */
+
+/* Botão do menu mobile */
+.mobile-menu-button {
+    display: none; /* Esconde por padrão */
+  }
+
+
+/* Estilo para links do menu */
+.menu a {
+    color: #412c05;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+/* Estilo base do menu */
+.menu {
+    display: flex;
+    gap: 1rem; /* Espaçamento horizontal entre os itens no desktop */
+  }
+  
+  .menu-list {
+    display: flex;
+    gap: 1rem; /* Espaçamento entre itens no desktop */
+  }
+  
+  .menu-list li {
+    position: relative;
+  }
+  
+  /* Dropdown no desktop */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+  }
+  
+  .menu-list li:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+
+    /* Botão do menu mobile */
+    .mobile-menu-button {
+    display: block; /* Exibe apenas no mobile */
+    background: none;
+    border: none;
+    font-size: 1.5rem; /* Ajuste o tamanho conforme necessário */
+    cursor: pointer;
+    margin-left: auto; /* Alinha à direita */
+  }
+
+/* Estilo para links do menu */
+    .menu a {
+     color: #412c05;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+    .menu {
+      display: none;
+      flex-direction: column; /* Exibir itens na vertical */
+      background-color: white;
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      padding: 1rem;
+    }
+  
+    .menu.active {
+      display: flex; /* Exibir o menu ao ativar no mobile */
+    }
+  
+    .menu-list {
+      flex-direction: column; /* Lista de itens na vertical */
+      gap: 0.5rem; /* Espaçamento reduzido entre itens no mobile */
+    }
+  
+    .dropdown-content {
+      position: static;
+      box-shadow: none;
+    }
+  }
+
+
+
+
+  /* Estilos responsivos */
+@media (max-width: 768px) {
+    /* Container principal */
+    .conteiner {
+        padding: 0 10px;
+    }
+
+    /* Títulos */
+    .titulo-destaque, 
+    .titulo-destaque1 {
+        font-size: 22px; /* Reduz o tamanho dos títulos */
+    }
+
+    /* Ajustes para o menu */
+    nav ul {
+        flex-direction: column; /* Alinha os itens na vertical */
+        gap: 10px; /* Reduz o espaçamento entre os itens */
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li {
+        font-size: 14px; /* Reduz o tamanho do texto */
+    }
+
+    nav a {
+        padding: 8px 10px; /* Ajusta o espaçamento dos links */
+    }
+
+    /* Botão do menu mobile */
+    .mobile-menu-button {
+        display: block; /* Exibe o botão do menu no mobile */
+        background: none;
+        border: none;
+        font-size: 1.5rem; /* Define o tamanho do botão */
+        cursor: pointer;
+        margin-left: auto;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column; /* Exibe itens na vertical */
+        background-color: white;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        padding: 1rem;
+    }
+
+    .menu.active {
+        display: flex; /* Exibe o menu ao ativar no mobile */
+    }
+
+    /* Cartões (pastorais) */
+    .pastorais-container {
+        flex-direction: column; /* Alinha os cartões verticalmente */
+        gap: 10px; /* Espaçamento entre os cartões */
+        padding: 10px;
+        position: relative;
+    }
+
+    .pastoral {
+        width: 70%; /* Ajusta os cartões para ocuparem a largura disponível */
+        max-width: none; /* Remove o limite de largura */
+    }
+
+    /* Textos dentro dos cartões */
+    .pastoral-front, 
+    .pastoral-back {
+        padding: 10px; /* Adiciona espaçamento interno */
+        font-size: 16px; /* Reduz o tamanho do texto */
+    }
+
+    .pastoral-front img,
+    .pastoral-back img {
+        max-width: 70%; /* Faz com que as imagens ocupem a largura do cartão */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+
+    /* Rodapé */
+    footer {
+        font-size: 14px; /* Ajusta o tamanho do texto no rodapé */
+        padding: 15px; /* Reduz o padding */
+    }
+
+    footer .social-icons a {
+        font-size: 18px; /* Reduz o tamanho dos ícones sociais */
+        margin: 0 10px; /* Reduz o espaçamento entre ícones */
+    }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    /* Centralizar os cartões no mobile */
+    .pastorais-container {
+        display: flex;
+        flex-direction: column; /* Cartões em coluna */
+        justify-content: center; /* Alinha verticalmente ao centro */
+        align-items: center; /* Centraliza horizontalmente */
+        gap: 20px; /* Espaçamento entre os cartões */
+        min-height: 100vh; /* Garante que ocupe toda a altura da tela */
+        padding: 10px;
+    }
+
+    .pastoral {
+        width: 90%; /* Ocupa 90% da largura da tela */
+        max-width: 300px; /* Define um limite de largura */
+        margin: 0 auto; /* Garante centralização horizontal adicional */
+    }
+
+    .pastoral-front,
+    .pastoral-back {
+        padding: 10px; /* Adiciona espaçamento interno */
+        font-size: 14px; /* Reduz o tamanho do texto */
+    }
+
+    .pastoral-front img,
+    .pastoral-back img {
+        max-width: 100%; /* Ajusta a largura da imagem ao cartão */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+}
+
   
