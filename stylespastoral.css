@@ -47,6 +47,18 @@ body {
     color: #5c3c00;
 }
 
+.parish-link {
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: #5c3c00; /* Cor do texto do título */
+    font-weight: bold; /* Deixa o texto em negrito */
+    transition: color 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.parish-link:hover {
+    color: #8e6f3f; /* Cor do link ao passar o mouse */
+}
+
+
 /* Cabeçalho fixo */
 header {
     position: fixed; /* Torna o cabeçalho fixo no topo */
@@ -331,6 +343,40 @@ footer .social-icons a:hover {
     border-radius: 8px;
   }
   
+
+  .texto-container {
+    max-width: 90%; /* Limita a largura do texto dentro da caixa */
+    margin: 0 auto; /* Centraliza a caixa na página */
+    padding: 15px; /* Adiciona espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow-wrap: break-word; /* Quebra palavras longas */
+    word-wrap: break-word; /* Compatibilidade com navegadores mais antigos */
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse a caixa */
+    box-sizing: border-box; /* Inclui padding no tamanho total da caixa */
+}
+
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 30px;
+    z-index: 1000;
+}
+.whatsapp-icon:hover {
+    background-color: #22c35e;
+    cursor: pointer;
+}
+
   /* CABEÇALHO RESPONSIVO */
 
 /* Botão do menu mobile */
@@ -469,7 +515,7 @@ footer .social-icons a:hover {
     .menu {
         display: none;
         flex-direction: column; /* Exibe itens na vertical */
-        background-color: white;
+        background-color: #D9C4A1;
         width: 100%;
         position: absolute;
         top: 100%;
