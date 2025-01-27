@@ -49,6 +49,18 @@ body {
     color: #5c3c00;
 }
 
+.parish-link {
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: #5c3c00; /* Cor do texto do título */
+    font-weight: bold; /* Deixa o texto em negrito */
+    transition: color 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.parish-link:hover {
+    color: #8e6f3f; /* Cor do link ao passar o mouse */
+}
+
+
 /* Cabeçalho fixo */
 header {
     position: fixed; /* Torna o cabeçalho fixo no topo */
@@ -202,6 +214,36 @@ header nav ul li a:hover {
 }
 
 /* Seção sobre a paróquia */
+
+.texto-container {
+    max-width: 90%; /* Limita a largura do texto dentro da caixa */
+    margin: 0 auto; /* Centraliza a caixa na página */
+    padding: 15px; /* Adiciona espaçamento interno */
+    background-color: #f5f5dc; /* Cor de fundo para a caixa */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
+    overflow-wrap: break-word; /* Quebra palavras longas */
+    word-wrap: break-word; /* Compatibilidade com navegadores mais antigos */
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse a caixa */
+    box-sizing: border-box; /* Inclui padding no tamanho total da caixa */
+}
+
+
+.imagem-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 20px; /* Adiciona espaçamento ao redor */
+}
+
+.imagem-container img {
+    max-width: 100%; /* Garante que a imagem se ajuste ao tamanho do contêiner */
+    height: auto; /* Mantém a proporção */
+    border-radius: 10px; /* Arredonda as bordas da imagem */
+}
+
+
+
 .about-parish {
     background-color: #D9C4A1;
     padding: 20px 10px;
@@ -593,7 +635,7 @@ header nav ul li a:hover {
 
 .mapa-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Mantenha a direção de linha em telas grandes */
     justify-content: space-between;
     align-items: flex-start;
     padding: 20px;
@@ -609,7 +651,7 @@ header nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.contact-container {
+.contato-container {
     flex: 1 1 35%;
     background-color: #ffffff;
     border-radius: 10px;
@@ -617,25 +659,25 @@ header nav ul li a:hover {
     padding: 20px;
 }
 
-.contact-container h2 {
+.contato-container h2 {
     color: #6a4e23;
     font-size: 1.8rem;
     margin-bottom: 10px;
 }
 
-.contact-container p {
+.contato-container p {
     font-size: 1rem;
     margin: 5px 0;
     color: #6b4c1b;
 }
 
-.contact-container a {
+.contato-container a {
     color: #6b4c1b;
     text-decoration: none;
     font-weight: bold;
 }
 
-.contact-container a:hover {
+.contato-container a:hover {
     text-decoration: underline;
 }
 
@@ -741,7 +783,7 @@ footer .social-icons a:hover {
     .menu {
       display: none;
       flex-direction: column; /* Exibir itens na vertical */
-      background-color: white;
+      background-color: #D9C4A1;
       width: 100%;
       position: absolute;
       top: 100%;
@@ -764,3 +806,105 @@ footer .social-icons a:hover {
       box-shadow: none;
     }
   }
+
+ /* Responsividade */
+ @media (max-width: 768px) {
+    .contato-container {
+        padding: 15px;
+        max-width: 90%; /* Ajusta para quase toda a largura */
+        position: relative; /* Mudei para relative para ficar dentro do fluxo normal */
+        z-index: 10; /* Ajuste do z-index, caso necessário */
+    }
+
+    .contato-container h2 {
+        font-size: 20px;
+    }
+
+    .contato-container p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contato-container {
+        width: 90%; /* Garante que o formulário ocupe 90% da tela */
+        margin: 0 auto; /* Centraliza o conteúdo */
+    }
+}
+
+@media (max-width: 480px) {
+    .contato-container {
+        width: 90%; /* Ajusta a largura para 90% da tela em telas menores */
+        margin: 0 auto; /* Centraliza o conteúdo */
+    }
+}
+
+/*mapa*/
+
+@media (max-width: 768px) {
+    .mapa-container {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        padding: 0; /* Remove o padding lateral para o mapa ocupar toda a largura */
+        width: 100%; /* Garante que o mapa ocupe 100% da largura */
+        margin: 0 auto; /* Centraliza o conteúdo */
+    }
+
+    .map-container {
+        flex: 1 1 100%; /* O mapa ocupa toda a largura disponível */
+        margin-top: 20px; /* Espaço entre o contato e o mapa */
+        width: 90%; /* Ajusta a largura para ocupar mais espaço nas laterais */
+        margin-left: auto; /* Centraliza o mapa */
+        margin-right: auto; /* Centraliza o mapa */
+    }
+}
+
+@media (max-width: 480px) {
+    .mapa-container {
+        padding: 0; /* Remove padding para ocupar toda a largura */
+    }
+
+    .map-container {
+        flex: 1 1 100%; /* Garante que o mapa ocupe toda a largura */
+        margin-top: 10px; /* Ajusta o espaçamento */
+        width: 90%; /* Ajusta a largura para ocupar mais espaço nas laterais */
+        margin-left: auto; /* Centraliza o mapa */
+        margin-right: auto; /* Centraliza o mapa */
+    }
+}
+
+/*clero*/
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .about-priest {
+        flex-direction: column; /* Organiza a seção em coluna */
+        text-align: center;
+    }
+
+    .priest-box {
+        max-width: 90%; /* Ajusta o tamanho para telas menores */
+    }
+
+    .team-section {
+        flex-direction: column; /* Organiza a seção de equipe em coluna */
+        align-items: center;
+    }
+
+    .team-box {
+        max-width: 90%; /* Ajusta o tamanho das caixas de equipe */
+        margin-top: 20px; /* Espaço entre as caixas */
+    }
+}
+
+@media (max-width: 480px) {
+    .team-box h3 {
+        font-size: 1.3em; /* Reduz o tamanho do título em telas muito pequenas */
+    }
+
+    .team-box p {
+        font-size: 0.9em; /* Reduz o tamanho do texto em telas menores */
+    }
+
+    .priest-box p {
+        font-size: 0.9em; /* Reduz o tamanho do texto do padre em telas menores */
+    }
+}
